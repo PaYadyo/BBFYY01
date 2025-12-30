@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML Semantic Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .layout-tag { font-family: monospace; font-weight: bold; background: rgba(0,0,0,0.1); padding: 2px 6px; border-radius: 4px; }
+        .visual-box { border: 2px dashed rgba(0,0,0,0.2); transition: all 0.2s ease; position: relative; }
+        .visual-box:hover { border-color: rgba(0,0,0,0.5); background-color: rgba(255,255,255,0.3); }
+        .label { position: absolute; top: 4px; right: 8px; font-size: 0.65rem; color: rgba(0,0,0,0.4); text-transform: uppercase; font-weight: bold; pointer-events: none; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen p-4 md:p-6 text-slate-800">
+
+    <div class="max-w-6xl mx-auto space-y-4">
+        
+        <!-- TOP HEADER -->
+        <header class="visual-box bg-white p-6 rounded-xl shadow-sm border-solid border-b-4 border-blue-500">
+            <span class="label">&lt;header&gt;</span>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div>
+                    <h1 class="text-3xl font-black text-slate-900 tracking-tight">TECH_HUB</h1>
+                    <p class="text-slate-500 text-sm">แหล่งรวมความรู้ Semantic HTML ระดับ Advance</p>
+                </div>
+                
+                <!-- SEARCH COMPONENT -->
+                <search class="visual-box bg-slate-100 p-2 rounded-lg w-full md:w-auto">
+                    <span class="label">&lt;search&gt;</span>
+                    <form class="flex gap-2">
+                        <input type="text" placeholder="ค้นหาบทความ..." class="bg-transparent text-sm px-2 outline-none w-full">
+                        <button type="submit" class="bg-blue-600 text-white px-4 py-1 rounded text-sm hover:bg-blue-700">Search</button>
+                    </form>
+                </search>
+            </div>
+
+            <!-- PRIMARY NAVIGATION -->
+            <nav class="visual-box bg-blue-50 mt-6 p-2 rounded-lg flex flex-wrap justify-center gap-6 font-semibold text-blue-700">
+                <span class="label">&lt;nav&gt;</span>
+                <a href="#" class="hover:text-blue-900">หน้าแรก</a>
+                <a href="#" class="hover:text-blue-900">คอร์สเรียน</a>
+                <a href="#" class="hover:text-blue-900">บล็อก</a>
+                <a href="#" class="hover:text-blue-900">เครื่องมือ</a>
+                <a href="#" class="hover:text-blue-900">ติดต่อเรา</a>
+            </nav>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-6">
+            
+            <!-- MAIN CONTENT -->
+            <main class="visual-box bg-white flex-[3] p-6 rounded-xl shadow-sm">
+                <span class="label">&lt;main&gt;</span>
+                
+                <section class="mb-10">
+                    <header class="mb-6">
+                        <h2 class="text-2xl font-bold text-slate-800">บทความเด่นวันนี้</h2>
+                        <p class="text-slate-500">รวมเนื้อหาที่น่าสนใจที่สุดในสัปดาห์นี้</p>
+                    </header>
+
+                    <!-- ARTICLE WITH NESTED STRUCTURE -->
+                    <article class="visual-box border-solid border-2 border-slate-100 rounded-xl overflow-hidden mb-6">
+                        <span class="label">&lt;article&gt;</span>
+                        
+                        <header class="p-6 bg-slate-50 border-b border-slate-100">
+                            <span class="label">&lt;header&gt; inside article</span>
+                            <h3 class="text-xl font-bold mb-2">เจาะลึก Semantic Tags สำหรับ SEO ยุค 2025</h3>
+                            <p class="text-sm text-slate-500">
+                                เขียนโดย: <strong>Admin</strong> | 
+                                <time datetime="2025-12-30" class="visual-box px-1 rounded bg-yellow-100">
+                                    <span class="label">&lt;time&gt;</span>
+                                    30 ธันวาคม 2025
+                                </time>
+                            </p>
+                        </header>
+
+                        <div class="p-6 space-y-4">
+                            <p>การใช้ Semantic HTML ไม่ได้เป็นเพียงเรื่องของโครงสร้าง แต่เป็นเรื่องของความหมายที่ Browser และ Bot เข้าใจ...</p>
+                            
+                            <!-- FIGURE & FIGCAPTION -->
+                            <figure class="visual-box bg-slate-50 p-4 rounded-lg text-center mx-auto max-w-md">
+                                <span class="label">&lt;figure&gt;</span>
+                                <div class="bg-slate-300 h-32 w-full rounded flex items-center justify-center text-slate-500 italic">
+                                    [Image Placeholder]
+                                </div>
+                                <figcaption class="visual-box mt-3 text-xs text-slate-500 p-1 italic">
+                                    <span class="label">&lt;figcaption&gt;</span>
+                                    รูปภาพแสดงความสัมพันธ์ระหว่าง DOM Tree และ Semantic Elements
+                                </figcaption>
+                            </figure>
+
+                            <p>สรุปสั้นๆ คือการเลือกใช้ Tag ให้ตรงกับหน้าที่ของมันช่วยให้เว็บเข้าถึงง่ายขึ้น (Accessibility)</p>
+                        </div>
+
+                        <footer class="p-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center text-sm">
+                            <span class="label">&lt;footer&gt; inside article</span>
+                            <div class="flex gap-2">
+                                <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded">#SEO</span>
+                                <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded">#HTML5</span>
+                            </div>
+                            <button class="text-blue-600 font-bold">อ่านต่อ →</button>
+                        </footer>
+                    </article>
+
+                    <!-- COLLAPSIBLE CONTENT -->
+                    <section class="visual-box bg-emerald-50 p-4 rounded-lg mt-8">
+                        <span class="label">&lt;section&gt; FAQ</span>
+                        <h3 class="font-bold mb-4 text-emerald-800">คำถามที่พบบ่อย</h3>
+                        
+                        <details class="visual-box bg-white p-3 rounded mb-2 cursor-pointer shadow-sm">
+                            <span class="label">&lt;details&gt;</span>
+                            <summary class="font-semibold text-sm select-none">
+                                <span class="label">&lt;summary&gt;</span>
+                                ทำไมต้องใช้ Semantic HTML?
+                            </summary>
+                            <div class="mt-3 text-sm text-slate-600 border-t pt-2">
+                                เพราะช่วยเรื่อง SEO, Accessibility และทำให้ Code อ่านง่ายขึ้นสำหรับ Developer ครับ
+                            </div>
+                        </details>
+
+                        <details class="visual-box bg-white p-3 rounded cursor-pointer shadow-sm">
+                            <summary class="font-semibold text-sm select-none">
+                                &lt;div&gt; กับ &lt;section&gt; ต่างกันยังไง?
+                            </summary>
+                            <div class="mt-3 text-sm text-slate-600 border-t pt-2">
+                                &lt;div&gt; ไม่มีความหมาย (Generic) ส่วน &lt;section&gt; ใช้บอกว่าเป็นส่วนหนึ่งของเนื้อหาที่มีหัวข้อหลักครับ
+                            </div>
+                        </details>
+                    </section>
+                </section>
+            </main>
+
+            <!-- ASIDE (SIDEBAR) -->
+            <aside class="visual-box bg-slate-100 flex-1 p-6 rounded-xl space-y-6">
+                <span class="label">&lt;aside&gt;</span>
+                
+                <section class="visual-box bg-white p-4 rounded-lg shadow-sm border border-slate-200">
+                    <span class="label">&lt;section&gt;</span>
+                    <h2 class="font-bold text-slate-800 border-b pb-2 mb-3">Newsletter</h2>
+                    <p class="text-xs text-slate-500 mb-4">รับข่าวสารใหม่ๆ ทางอีเมล</p>
+                    <input type="email" placeholder="email@example.com" class="w-full p-2 text-sm border rounded mb-2">
+                    <button class="w-full bg-slate-800 text-white py-2 rounded text-sm">Subscribe</button>
+                </section>
+
+                <section class="visual-box bg-white p-4 rounded-lg shadow-sm border border-slate-200">
+                    <h2 class="font-bold text-slate-800 border-b pb-2 mb-3">Popular Posts</h2>
+                    <ul class="text-sm space-y-4">
+                        <li class="flex gap-3">
+                            <span class="bg-blue-600 text-white w-6 h-6 flex items-center justify-center rounded-full text-xs">1</span>
+                            <a href="#" class="hover:text-blue-600 leading-tight">10 เทคนิคการใช้ CSS Grid</a>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="bg-blue-600 text-white w-6 h-6 flex items-center justify-center rounded-full text-xs">2</span>
+                            <a href="#" class="hover:text-blue-600 leading-tight">ทำไม Tailwind CSS ถึงได้รับความนิยม?</a>
+                        </li>
+                    </ul>
+                </section>
+            </aside>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="visual-box bg-slate-900 text-slate-300 p-10 rounded-xl">
+            <span class="label text-slate-600">&lt;footer&gt;</span>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div>
+                    <h3 class="text-white font-bold mb-4">เกี่ยวกับเรา</h3>
+                    <p class="text-sm leading-relaxed">เราเป็นชุมชนที่มุ่งเน้นการสอนการพัฒนาเว็บด้วยวิธีที่ถูกต้องตามมาตรฐานสากล</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold mb-4">ติดต่อเรา</h3>
+                    <!-- ADDRESS TAG -->
+                    <address class="visual-box not-italic text-sm space-y-2">
+                        <span class="label text-slate-600">&lt;address&gt;</span>
+                        <p>📍 123 ถนนสมมติ, แขวงเขตใหม่</p>
+                        <p>กรุงเทพมหานคร 10110</p>
+                        <p>📧 Email: contact@techhub.com</p>
+                    </address>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold mb-4">ติดตามเรา</h3>
+                    <div class="flex gap-4">
+                        <a href="#" class="hover:text-white">Facebook</a>
+                        <a href="#" class="hover:text-white">Twitter</a>
+                        <a href="#" class="hover:text-white">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
+                © 2025 TECH_HUB - มุ่งมั่นสร้างสรรค์เว็บที่ดีขึ้น
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- TECHNICAL LEGEND -->
+    <div class="max-w-6xl mx-auto mt-8 p-6 bg-white rounded-xl shadow-lg border-l-4 border-yellow-400">
+        <h2 class="text-lg font-bold mb-3">🛠️ อธิบาย Tag ระดับ Advance ที่เพิ่มเข้ามา:</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+            <div class="p-3 bg-slate-50 rounded">
+                <span class="layout-tag">&lt;search&gt;</span>
+                <p class="mt-1">ใช้ครอบส่วนที่เป็นช่องค้นหา (เป็น Tag ใหม่ล่าสุด)</p>
+            </div>
+            <div class="p-3 bg-slate-50 rounded">
+                <span class="layout-tag">&lt;time&gt;</span>
+                <p class="mt-1">ระบุวันที่เพื่อให้ Machine เข้าใจรูปแบบวันเวลาที่แน่นอน (Machine-readable)</p>
+            </div>
+            <div class="p-3 bg-slate-50 rounded">
+                <span class="layout-tag">&lt;figure&gt;</span>
+                <p class="mt-1">ใช้ครอบสื่อ (รูป/วิดีโอ/กราฟ) ที่มีความสำคัญกับเนื้อหา</p>
+            </div>
+            <div class="p-3 bg-slate-50 rounded">
+                <span class="layout-tag">&lt;address&gt;</span>
+                <p class="mt-1">ระบุข้อมูลติดต่อของผู้ดูแลหน้าเว็บหรือองค์กร</p>
+            </div>
+            <div class="p-3 bg-slate-50 rounded">
+                <span class="layout-tag">&lt;details&gt;</span>
+                <p class="mt-1">สร้าง UI ที่ย่อ-ขยายเนื้อหาได้โดยไม่ต้องพึ่ง JavaScript</p>
+            </div>
+            <div class="p-3 bg-slate-50 rounded">
+                <span class="layout-tag">&lt;header/footer&gt;</span>
+                <p class="mt-1">ใช้ซ้อนใน Article ได้ เพื่อระบุส่วนหัวและท้ายของเนื้อหาชิ้นนั้น</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
