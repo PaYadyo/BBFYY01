@@ -16,3 +16,9 @@
     color: #ffffff;
     flex-direction: column;
 }
+
+@media (max-width: 768px) {
+  body {
+    background-color: black;
+  }
+}
