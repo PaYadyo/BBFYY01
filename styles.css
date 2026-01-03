@@ -1,24 +1,41 @@
+@media (max-width: 768px) {}
+
 .bbfyy01-background {
     color: #ffffff;
     background-color: #17171c;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 .header-title { font-size: 24px; }
 
 .bb-title-barheader {
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #272b5c;
-    color: #ffffff;
-    flex-direction: column;
+  padding: 0px;
+  line-height: 0px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #272b5c;
+  color: #ffffff;
+  flex-direction: column;
 }
 
-@media (max-width: 768px) {
-  body {
-    background-color: black;
-  }
+.header-button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.bbfyy01-btn {
+    background-color: #9827e4;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display:  inline;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
 }
