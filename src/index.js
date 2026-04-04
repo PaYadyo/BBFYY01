@@ -1,2 +1,3 @@
-import { themeconfig } from "./config.js";
+import { themeconfig, setting } from "./config.js";
 themeconfig();
+setting();

@@ -116,3 +116,23 @@
     border-color: var(--btn-hover);
     transform: translateY(-2px);
 }
+
+/* สไตล์กล่องเมนูที่ซ่อนอยู่ */
+.setting-box {
+    display: none; /* ซ่อนไว้ก่อน */
+    position: absolute;
+    top: 60px; /* ดันลงมาให้อยู่ใต้ปุ่มฟันเฟือง */
+    right: 0;
+    background-color: var(--header-bg);
+    border: 1px solid var(--btn-color);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-width: 200px;
+    z-index: 100; /* ทำให้กล่องลอยอยู่หน้าสุด ไม่โดนอย่างอื่นทับ */
+}
+
+/* คลาสที่จะถูก JS สั่งแปะเพื่อเปิดเมนู */
+.setting-box.show {
+    display: block;
+}
