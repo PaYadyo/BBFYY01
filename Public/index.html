@@ -4,21 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Badminton Booking</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/public/css/styles.css">
     <link href="/image/png/favicon.png" rel="icon" type="image/png">
     <link href="/image/x-icon/favicon.ico" rel="icon" type="image/x-icon">
+
+    <script type="module" src="/src/index.js"></script>
 </head>
 
-<!--โครงสร้างตัวเว็ป หรือเรียกว่า body เป็นที่อยู่ให้พวก element-->
 <body class="bbfyy01-head">
 
-    <header class="bb-title-barheader"> <!--Header-->
-        <h1 class="head-txt">Welcome to Badminton Booking</h1>
-        <p class ="sub-txt">Your can book your badminton here</p>
+    <script>
+        if (localStorage.getItem("theme") === 'dark') {
+            document.body.classList.add("dark-mode");
+        } else {
+            document.body.classList.remove("dark-mode");
+        }
+    </script>
 
-        <div class="header-button-group">
-            <a href="/public/login.html" class='bbfyy01-btn'>Login</a>
-            <a href="/public/register.html" class="bbfyy01-btn">Register</a>
+    <header class="bbfyy01-title-barheader"> 
+        <div class="header-text">
+            <h1 class="head-txt">Welcome to Badminton Booking</h1>
+            <p class="sub-txt">You can book your badminton court here</p>
+        </div>
+        <div class="title-side">
+            <button id="theme-toggle" class="btn btn-icon">🌙</button>
+            
+            <a href="/public/login.html" class="btn btn-outline">Login</a>
+            <a href="/public/register.html" class="btn btn-primary">Register</a>
         </div>
     </header>
+</body>
 </html>

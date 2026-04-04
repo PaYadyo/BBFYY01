@@ -1,0 +1,118 @@
+/* -------------------------------------
+   กำหนดตัวแปรสี (CSS Variables)
+-------------------------------------- */
+:root {
+    /* ธีมสว่าง (Light Mode) - เป็นค่าเริ่มต้น */
+    --bg-color: #f4f7f6;
+    --header-bg: #ffffff;
+    --text-head: #2c3e50;
+    --text-sub: #7f8c8d;
+    --btn-color: #3427ae;
+    --btn-hover: #6183cc;
+}
+
+.dark-mode {
+    /* ธีมมืด (Dark Mode) - โค้ดสีตามที่คุณออกแบบมา */
+    --bg-color: #17171c;
+    --header-bg: #232548;
+    --text-head: #ffffff;
+    --text-sub: #ffffff;
+    --btn-color: #3427ae;
+    --btn-hover: #6183cc; 
+}
+
+/* -------------------------------------
+   รีเซ็ตขอบหน้าจอพื้นฐาน
+-------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* -------------------------------------
+   นำตัวแปรมาใช้งาน (ใช้ var(--ชื่อตัวแปร))
+-------------------------------------- */
+.bbfyy01-head {
+    background-color: var(--bg-color); 
+    transition: background-color 0.3s ease; /* ทำให้เวลาเปลี่ยนธีม สีจะค่อยๆ เปลี่ยนแบบสมูท */
+}
+
+.bbfyy01-title-barheader {
+    background-color: var(--header-bg);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease;
+}
+
+.head-txt {
+    color: var(--text-head);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.sub-txt {
+    color: var(--text-sub);
+    font-size: 16px; /* ขออนุญาตปรับขนาดลงนิดนึงเพื่อความสวยงาม */
+    transition: color 0.3s ease;
+}
+
+/* -------------------------------------
+   จัดระเบียบและตกแต่งปุ่ม
+-------------------------------------- */
+.title-side {
+    display: flex;
+    gap: 15px;
+    align-items: center; /* จัดให้ปุ่มทั้งหมดอยู่กึ่งกลางแนวตั้ง */
+}
+
+/* สไตล์พื้นฐานของปุ่ม */
+.btn {
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* สไตล์ปุ่มกดเปลี่ยนธีม */
+.btn-icon {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+/* สไตล์ปุ่ม Login */
+.btn-outline {
+    color: var(--btn-color);
+    border: 2px solid var(--btn-color);
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--btn-color);
+    color: #ffffff;
+}
+
+/* สไตล์ปุ่ม Register */
+.btn-primary {
+    background-color: var(--btn-color);
+    color: #ffffff;
+    border: 2px solid var(--btn-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-hover);
+    border-color: var(--btn-hover);
+    transform: translateY(-2px);
+}
